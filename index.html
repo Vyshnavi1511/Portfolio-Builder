@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Folio — Portfolio Builder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Instrument+Serif:ital@0;1&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="cursor"></div>
+<div id="cursor-trail"></div>
+
+<!-- ── LANDING / HERO ── -->
+<div id="screen-landing" class="screen active">
+
+  <nav class="nav">
+    <div class="nav-logo">folio<span>.</span></div>
+    <div class="nav-links">
+      <a href="#templates">Templates</a>
+      <a href="#features">Features</a>
+      <a href="#pricing-section">Pricing</a>
+    </div>
+    <button class="btn-cta" id="startBuildingBtn">Start Building →</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      500+ portfolios deployed this week
+    </div>
+    <h1 class="hero-title">
+      Your portfolio,<br/>
+      <em>live in minutes.</em>
+    </h1>
+    <p class="hero-sub">
+      No-code. No hosting setup. No design skills needed.<br/>
+      Pick a template, fill your details, deploy to Vercel in one click.
+    </p>
+    <div class="hero-actions">
+      <button class="btn-hero-primary" id="heroStartBtn">Build Your Portfolio Free →</button>
+      <a href="#templates" class="btn-hero-ghost">Browse Templates</a>
+    </div>
+    <div class="hero-proof">
+      <div class="proof-avatars">
+        <div class="proof-av" style="background:#6ee7b7">A</div>
+        <div class="proof-av" style="background:#60a5fa">J</div>
+        <div class="proof-av" style="background:#f472b6">M</div>
+        <div class="proof-av" style="background:#fbbf24">R</div>
+        <div class="proof-av" style="background:#a78bfa">S</div>
+      </div>
+      <span class="proof-text">Trusted by <strong>12,000+</strong> developers & designers</span>
+    </div>
+
+    <!-- FLOATING MOCKUP -->
+    <div class="hero-mockup" id="heroMockup">
+      <div class="mockup-bar">
+        <span class="m-dot red"></span>
+        <span class="m-dot yellow"></span>
+        <span class="m-dot green"></span>
+        <span class="m-url">folio.dev/your-name</span>
+      </div>
+      <div class="mockup-body">
+        <div class="mb-sidebar">
+          <div class="mb-logo-block"></div>
+          <div class="mb-nav-items">
+            <div class="mb-ni active"></div>
+            <div class="mb-ni"></div>
+            <div class="mb-ni"></div>
+            <div class="mb-ni"></div>
+          </div>
+        </div>
+        <div class="mb-content">
+          <div class="mb-hero-text">
+            <div class="mb-h1"></div>
+            <div class="mb-h1 short"></div>
+            <div class="mb-p"></div>
+            <div class="mb-p short2"></div>
+            <div class="mb-btns">
+              <div class="mb-btn primary"></div>
+              <div class="mb-btn ghost"></div>
+            </div>
+          </div>
+          <div class="mb-avatar-circle"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features-section" id="features">
+    <div class="section-eyebrow">Why Folio?</div>
+    <h2 class="section-title">Everything you need,<br/><em>nothing you don't.</em></h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>One-Click Deploy</h3>
+        <p>Connect your GitHub, choose a domain, and ship. Your portfolio is live on Vercel's edge network in under 60 seconds.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎨</div>
+        <h3>50+ Templates</h3>
+        <p>Curated templates for developers, designers, writers, and photographers. Each optimised for recruiter attention spans.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌐</div>
+        <h3>Custom Domains</h3>
+        <p>Bring your own domain or get a free folio.dev subdomain. SSL included automatically, zero config.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Analytics Built In</h3>
+        <p>See who's visiting, where they're from, and which projects grab attention — without installing anything extra.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">✏️</div>
+        <h3>Live Editor</h3>
+        <p>Visual drag-and-drop editor with real-time preview. Change fonts, colours, and layouts without touching code.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔗</div>
+        <h3>GitHub Sync</h3>
+        <p>Auto-import your pinned repos, stars, and contribution graph. Your portfolio updates itself when you push code.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEMPLATES SHOWCASE -->
+  <section class="templates-section" id="templates">
+    <div class="section-eyebrow">Templates</div>
+    <h2 class="section-title">Start from something<br/><em>beautiful.</em></h2>
+    <div class="templates-scroll" id="templatesScroll">
+
+      <div class="template-card" data-template="midnight" onclick="selectTemplate('midnight')">
+        <div class="tpl-preview midnight-preview">
+          <div class="tp-nav"><div class="tp-logo"></div><div class="tp-links"><span></span><span></span><span></span></div></div>
+          <div class="tp-body">
+            <div class="tp-hero-text"><div class="tp-h"></div><div class="tp-h short"></div><div class="tp-sub"></div><div class="tp-btn"></div></div>
+            <div class="tp-circle"></div>
+          </div>
+        </div>
+        <div class="tpl-info">
+          <span class="tpl-name">Midnight</span>
+          <span class="tpl-tag">Developer</span>
+        </div>
+      </div>
+
+      <div class="template-card" data-template="editorial" onclick="selectTemplate('editorial')">
+        <div class="tpl-preview editorial-preview">
+          <div class="tp-top-bar"><div class="tp-logo light"></div><div class="tp-links light"><span></span><span></span><span></span></div></div>
+          <div class="tp-editorial-body">
+            <div class="tp-big-num">01</div>
+            <div class="tp-editorial-text"><div class="tp-h dark"></div><div class="tp-h dark short"></div><div class="tp-sub dark"></div></div>
+            <div class="tp-editorial-img"></div>
+          </div>
+        </div>
+        <div class="tpl-info">
+          <span class="tpl-name">Editorial</span>
+          <span class="tpl-tag">Designer</span>
+        </div>
+      </div>
+
+      <div class="template-card" data-template="terminal" onclick="selectTemplate('terminal')">
+        <div class="tpl-preview terminal-preview">
+          <div class="tp-term-bar"><span class="td red"></span><span class="td yellow"></span><span class="td green"></span></div>
+          <div class="tp-term-body">
+            <div class="tp-prompt"><span class="tp-dollar">$</span> whoami</div>
+            <div class="tp-output">Sherlock Holmes</div>
+            <div class="tp-prompt"><span class="tp-dollar">$</span> cat skills.txt</div>
+            <div class="tp-output dim">React, Node, Python...</div>
+            <div class="tp-cursor-blink">▌</div>
+          </div>
+        </div>
+        <div class="tpl-info">
+          <span class="tpl-name">Terminal</span>
+          <span class="tpl-tag">Engineer</span>
+        </div>
+      </div>
+
+      <div class="template-card" data-template="glass" onclick="selectTemplate('glass')">
+        <div class="tpl-preview glass-preview">
+          <div class="tp-glass-bg">
+            <div class="tp-blob b1"></div>
+            <div class="tp-blob b2"></div>
+          </div>
+          <div class="tp-glass-card">
+            <div class="tp-gc-av"></div>
+            <div class="tp-gc-text"><div class="tp-h"></div><div class="tp-sub"></div></div>
+          </div>
+        </div>
+        <div class="tpl-info">
+          <span class="tpl-name">Glass</span>
+          <span class="tpl-tag">Minimal</span>
+        </div>
+      </div>
+
+      <div class="template-card" data-template="brutalist" onclick="selectTemplate('brutalist')">
+        <div class="tpl-preview brutalist-preview">
+          <div class="tp-brut-header">PORTFOLIO</div>
+          <div class="tp-brut-body">
+            <div class="tp-brut-name">YOUR<br/>NAME</div>
+            <div class="tp-brut-line"></div>
+            <div class="tp-brut-tags"><span>DEV</span><span>DESIGN</span></div>
+          </div>
+        </div>
+        <div class="tpl-info">
+          <span class="tpl-name">Brutalist</span>
+          <span class="tpl-tag">Bold</span>
+        </div>
+      </div>
+
+      <div class="template-card" data-template="magazine" onclick="selectTemplate('magazine')">
+        <div class="tpl-preview magazine-preview">
+          <div class="tp-mag-grid">
+            <div class="tp-mag-big"></div>
+            <div class="tp-mag-small"><div></div><div></div></div>
+          </div>
+          <div class="tp-mag-title">WORK</div>
+        </div>
+        <div class="tpl-info">
+          <span class="tpl-name">Magazine</span>
+          <span class="tpl-tag">Creative</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="template-more">+44 more templates available after signup</div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing-section" id="pricing-section">
+    <div class="section-eyebrow">Pricing</div>
+    <h2 class="section-title">Simple, honest pricing.</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pc-plan">Free</div>
+        <div class="pc-price">₹0<span>/mo</span></div>
+        <ul class="pc-features">
+          <li>✓ 1 Portfolio</li>
+          <li>✓ 6 Templates</li>
+          <li>✓ folio.dev subdomain</li>
+          <li>✓ GitHub sync</li>
+          <li>✗ Custom domain</li>
+          <li>✗ Analytics</li>
+          <li>✗ Remove Folio branding</li>
+        </ul>
+        <button class="pc-btn" onclick="goToBuild()">Get Started Free</button>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pc-badge">Most Popular</div>
+        <div class="pc-plan">Pro</div>
+        <div class="pc-price">₹299<span>/mo</span></div>
+        <ul class="pc-features">
+          <li>✓ Unlimited Portfolios</li>
+          <li>✓ 50+ Templates</li>
+          <li>✓ Custom Domain</li>
+          <li>✓ GitHub Sync</li>
+          <li>✓ Analytics Dashboard</li>
+          <li>✓ Remove Branding</li>
+          <li>✓ Priority Support</li>
+        </ul>
+        <button class="pc-btn primary" onclick="goToBuild()">Start Pro Trial</button>
+      </div>
+      <div class="pricing-card">
+        <div class="pc-plan">Teams</div>
+        <div class="pc-price">₹799<span>/mo</span></div>
+        <ul class="pc-features">
+          <li>✓ Everything in Pro</li>
+          <li>✓ Up to 10 Members</li>
+          <li>✓ Team Dashboard</li>
+          <li>✓ Shared Templates</li>
+          <li>✓ API Access</li>
+          <li>✓ White-label</li>
+          <li>✓ Dedicated Support</li>
+        </ul>
+        <button class="pc-btn" onclick="goToBuild()">Contact Sales</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-brand">folio<span>.</span></div>
+    <p class="footer-copy">Built by <a href="https://github.com/SherlockHolmes1210" target="_blank">Sherlock Holmes</a> · Open Source on GitHub</p>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Docs</a>
+      <a href="https://github.com/SherlockHolmes1210" target="_blank">GitHub</a>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ── BUILDER SCREEN ── -->
+<div id="screen-builder" class="screen">
+
+  <!-- BUILDER TOPBAR -->
+  <div class="builder-topbar">
+    <button class="builder-back" id="backToLanding">← Back</button>
+    <div class="builder-steps">
+      <div class="bstep active" id="bstep-1"><span>1</span> Template</div>
+      <div class="bstep-line"></div>
+      <div class="bstep" id="bstep-2"><span>2</span> Details</div>
+      <div class="bstep-line"></div>
+      <div class="bstep" id="bstep-3"><span>3</span> Domain</div>
+      <div class="bstep-line"></div>
+      <div class="bstep" id="bstep-4"><span>4</span> Deploy</div>
+    </div>
+    <div class="builder-logo">folio<span>.</span></div>
+  </div>
+
+  <!-- STEP 1: TEMPLATE -->
+  <div class="builder-step active" id="step-1">
+    <div class="step-header">
+      <h2>Choose your template</h2>
+      <p>You can always switch later — nothing is permanent until you deploy.</p>
+    </div>
+    <div class="builder-templates-grid" id="builderTemplateGrid"></div>
+    <div class="step-footer">
+      <div></div>
+      <button class="btn-next" id="toStep2">Continue →</button>
+    </div>
+  </div>
+
+  <!-- STEP 2: DETAILS -->
+  <div class="builder-step" id="step-2">
+    <div class="step-layout">
+      <div class="step-form">
+        <div class="step-header">
+          <h2>Fill your details</h2>
+          <p>This will power your entire portfolio. Edit anytime from your dashboard.</p>
+        </div>
+
+        <div class="form-section-title">Personal Info</div>
+        <div class="bf-group">
+          <label>Full Name *</label>
+          <input type="text" id="bf-name" placeholder="Sherlock Holmes" class="bf-input"/>
+        </div>
+        <div class="bf-row">
+          <div class="bf-group">
+            <label>Title / Role *</label>
+            <input type="text" id="bf-role" placeholder="Full-Stack Developer" class="bf-input"/>
+          </div>
+          <div class="bf-group">
+            <label>Location</label>
+            <input type="text" id="bf-location" placeholder="Mumbai, India" class="bf-input"/>
+          </div>
+        </div>
+        <div class="bf-group">
+          <label>Bio (2–3 sentences)</label>
+          <textarea id="bf-bio" rows="3" class="bf-input" placeholder="I build fast, beautiful web applications..."></textarea>
+        </div>
+
+        <div class="form-section-title">Links</div>
+        <div class="bf-row">
+          <div class="bf-group">
+            <label>GitHub URL</label>
+            <input type="text" id="bf-github" placeholder="github.com/username" class="bf-input"/>
+          </div>
+          <div class="bf-group">
+            <label>LinkedIn URL</label>
+            <input type="text" id="bf-linkedin" placeholder="linkedin.com/in/username" class="bf-input"/>
+          </div>
+        </div>
+        <div class="bf-row">
+          <div class="bf-group">
+            <label>Email</label>
+            <input type="email" id="bf-email" placeholder="you@email.com" class="bf-input"/>
+          </div>
+          <div class="bf-group">
+            <label>Twitter / X</label>
+            <input type="text" id="bf-twitter" placeholder="@username" class="bf-input"/>
+          </div>
+        </div>
+
+        <div class="form-section-title">Skills</div>
+        <div class="bf-group">
+          <label>Top Skills (comma separated)</label>
+          <input type="text" id="bf-skills" placeholder="React, Node.js, Python, TypeScript, Docker" class="bf-input"/>
+          <div class="skills-preview" id="skillsPreview"></div>
+        </div>
+
+        <div class="form-section-title">Projects (up to 3)</div>
+        <div id="projectsForm"></div>
+        <button class="btn-add-project" id="addProjectBtn">+ Add Project</button>
+
+        <div class="step-footer">
+          <button class="btn-back" id="toStep1Back">← Back</button>
+          <button class="btn-next" id="toStep3">Continue →</button>
+        </div>
+      </div>
+
+      <!-- LIVE PREVIEW PANEL -->
+      <div class="preview-panel">
+        <div class="preview-label">Live Preview</div>
+        <div class="preview-frame-wrap">
+          <div class="preview-frame" id="livePreview"></div>
+        </div>
+        <div class="preview-device-btns">
+          <button class="dev-btn active" data-device="desktop">⬛ Desktop</button>
+          <button class="dev-btn" data-device="mobile">📱 Mobile</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3: DOMAIN -->
+  <div class="builder-step" id="step-3">
+    <div class="step-header">
+      <h2>Set your domain</h2>
+      <p>Get a free subdomain instantly, or connect your own.</p>
+    </div>
+
+    <div class="domain-options">
+      <div class="domain-option active" id="domFree" onclick="selectDomain('free')">
+        <div class="do-radio active"></div>
+        <div class="do-body">
+          <div class="do-title">Free Subdomain <span class="do-badge">Instant</span></div>
+          <div class="do-desc">Get a folio.dev/yourname URL, ready in seconds.</div>
+          <div class="subdomain-input-wrap">
+            <span class="subdomain-prefix">folio.dev/</span>
+            <input type="text" id="subdomainInput" class="subdomain-input" placeholder="your-name" oninput="checkSubdomain()"/>
+            <span class="subdomain-status" id="subdomainStatus"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="domain-option" id="domCustom" onclick="selectDomain('custom')">
+        <div class="do-radio"></div>
+        <div class="do-body">
+          <div class="do-title">Custom Domain <span class="do-badge pro">Pro</span></div>
+          <div class="do-desc">Use your own domain like yourname.dev or myportfolio.io.</div>
+          <input type="text" id="customDomainInput" class="bf-input" placeholder="yourname.dev" style="margin-top:10px"/>
+          <div class="dns-instructions" id="dnsInstructions">
+            <div class="dns-step">1. Add a CNAME record pointing to <code>cname.folio.dev</code></div>
+            <div class="dns-step">2. We'll auto-provision your SSL certificate</div>
+            <div class="dns-step">3. Propagation takes 5–30 minutes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-footer" style="margin-top:40px">
+      <button class="btn-back" id="toStep2Back">← Back</button>
+      <button class="btn-next" id="toStep4">Continue →</button>
+    </div>
+  </div>
+
+  <!-- STEP 4: DEPLOY -->
+  <div class="builder-step" id="step-4">
+    <div class="deploy-screen" id="deployIdle">
+      <div class="deploy-summary" id="deploySummary"></div>
+      <div class="deploy-cta">
+        <h2>Ready to go live?</h2>
+        <p>One click to deploy on Vercel's global edge network.<br/>Your site will be live in under 60 seconds.</p>
+        <button class="btn-deploy" id="deployBtn">
+          <span class="deploy-icon">▲</span> Deploy to Vercel
+        </button>
+        <div class="deploy-note">Free plan includes SSL, CDN, and 100GB bandwidth/month.</div>
+      </div>
+    </div>
+
+    <!-- DEPLOY ANIMATION -->
+    <div class="deploy-progress" id="deployProgress" style="display:none">
+      <div class="dp-icon">▲</div>
+      <h2 class="dp-title">Deploying your portfolio…</h2>
+      <div class="dp-log" id="deployLog"></div>
+      <div class="dp-bar-track"><div class="dp-bar-fill" id="deployBar"></div></div>
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="deploy-success" id="deploySuccess" style="display:none">
+      <div class="ds-confetti" id="confetti"></div>
+      <div class="ds-check">✓</div>
+      <h2 class="ds-title">You're live! 🎉</h2>
+      <div class="ds-url" id="deployedUrl"></div>
+      <div class="ds-actions">
+        <button class="btn-visit" id="visitSiteBtn">Visit Site ↗</button>
+        <button class="btn-ghost-sm" onclick="copyUrl()">Copy URL</button>
+        <button class="btn-ghost-sm" onclick="goToDashboard()">Dashboard →</button>
+      </div>
+      <div class="ds-stats">
+        <div class="ds-stat"><span>47ms</span>TTFB</div>
+        <div class="ds-stat"><span>100</span>Perf Score</div>
+        <div class="ds-stat"><span>SSL</span>Active</div>
+        <div class="ds-stat"><span>CDN</span>Global</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- DASHBOARD SCREEN -->
+<div id="screen-dashboard" class="screen">
+  <div class="dash-header">
+    <div class="dash-logo">folio<span>.</span> Dashboard</div>
+    <button class="btn-new-portfolio" onclick="goToBuild()">+ New Portfolio</button>
+  </div>
+  <div class="dash-body">
+    <div class="dash-sidebar">
+      <a class="dash-nav active">⊞ Portfolios</a>
+      <a class="dash-nav">📊 Analytics</a>
+      <a class="dash-nav">🌐 Domains</a>
+      <a class="dash-nav">⚙ Settings</a>
+    </div>
+    <div class="dash-content">
+      <h2 class="dash-section-title">My Portfolios</h2>
+      <div class="dash-portfolios" id="dashPortfolios"></div>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
