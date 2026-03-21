@@ -39,19 +39,4 @@ portfolio-builder/
 | Storage      | localStorage (portfolios persist)       |
 | Charts       | Pure CSS / inline SVG                   |
 
-## 🌐 Deploy on GitHub Pages
 
-1. Push to your repo
-2. Settings → Pages → Source: `main`, root `/`
-3. Live at `https://SherlockHolmes1210.github.io/portfolio-builder/`
-
-## 🔗 Add to Portfolio
-
-Update project card #04 in your portfolio's `index.html`:
-```html
-<a href="https://SherlockHolmes1210.github.io/portfolio-builder/" class="project-link" target="_blank">↗ Live Demo</a>
-```
-
----
-
-Built by Sherlock Holmes · github.com/SherlockHolmes1210
